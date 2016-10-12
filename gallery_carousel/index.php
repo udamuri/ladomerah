@@ -30,16 +30,25 @@
                           <div class="item active">
                             <div class="small">
                                 <img class="lazy" src="img/1.jpg" alt="First slide" >
+                                <div class="carousel-caption">
+                                    <p>First slide</p>
+                                </div>
                             </div>
                           </div>
                           <div class="item">
                             <div class="small">
                               <img class="lazy" src="" data-src="img/2.jpg" alt="Second slide">
+                              <div class="carousel-caption">
+                                    <p>First slide</p>
+                                </div>
                             </div>
                           </div>
                           <div class="item">
                             <div class="small">
                               <img class="lazy" src="" data-src="img/3.jpg" alt="Third slide">
+                              <div class="carousel-caption">
+                                    <p>First slide</p>
+                                </div>
                             </div>
                           </div>
                         </div>

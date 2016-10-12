@@ -23,7 +23,29 @@ body {
 					height: 100%;
 					display: table;
 					text-align: center;
+
+					div.carousel-caption 
+    				{
+    					margin: 0;
+    					padding: 0;
+    					bottom: 0;
+    					display: none;
+    					p 
+    					{
+    						background: rgba(0, 0, 0, 0.5);
+    						color: #fff;
+    					}
+    				}
+
 				}
+
+				div.small:hover{
+					div.carousel-caption 
+    				{
+    					display: block;
+    				}
+				}
+
 				div.small img{
 					margin: auto;
 					max-width: 100%;
