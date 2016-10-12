@@ -21,36 +21,47 @@
   <body>
     <div class="container">
       <div class="row">
+          <?php for($i = 0;$i<9;$i++) { ?>
           <div class="col-md-4">
-              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                  <div class="item active">
-                    <div class="small">
-                        <img src="img/1.jpg" alt="First slide" >
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="small">
-                      <img src="img/2.jpg" alt="Second slide">
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="small">
-                      <img src="img/3.jpg" alt="Third slide">
-                    </div>
-                  </div>
-                </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div id="carousel-lado<?php echo $i;?>" class="carousel slide carousel-slide" data-interval="false" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                          <div class="item active">
+                            <div class="small">
+                                <img class="lazy" src="img/1.jpg" alt="First slide" >
+                            </div>
+                          </div>
+                          <div class="item">
+                            <div class="small">
+                              <img class="lazy" src="" data-src="img/2.jpg" alt="Second slide">
+                            </div>
+                          </div>
+                          <div class="item">
+                            <div class="small">
+                              <img class="lazy" src="" data-src="img/3.jpg" alt="Third slide">
+                            </div>
+                          </div>
+                        </div>
 
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
+                        <a class="left carousel-control" href="#carousel-lado<?php echo $i;?>" role="button" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-lado<?php echo $i;?>" role="button" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+                <div class="panel-footer">Panel footer</div>
               </div>
           </div>
+
+          <?php } ?>
       </div>
     </div>
 
@@ -60,7 +71,37 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-      
+        var cHeight = 0;
+        $('.carousel-slide').on('slide.bs.carousel', function (e) {
+             var $nextImage = null;
+
+              $activeItem = $('.item.active', this);
+
+
+              if (e.direction == 'left'){
+                  $nextImage = $activeItem.next('.item').find('img');
+              } else {
+                  if ($activeItem.index() == 0){
+                      $nextImage = $('img:last', $activeItem.parent());
+                  } else {
+                      $nextImage = $activeItem.prev('.item').find('img');
+                  }
+              }
+
+              // prevents the slide decrease in height
+              if (cHeight == 0) {
+                 cHeight = $(this).height();
+                 $activeItem.next('.item').height(cHeight);
+              }
+
+              // prevents the loaded image if it is already loaded
+              var src = $nextImage.data('src');
+
+              if (typeof src !== "undefined" && src != "") {
+                 $nextImage.attr('src', src)
+                 $nextImage.data('src', '');
+              }
+        }) 
     </script>
   </body>
 </html>
