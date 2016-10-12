@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,21 +23,21 @@
       <div class="row">
           <div class="col-md-4">
               <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
-
                 <div class="carousel-inner" role="listbox">
                   <div class="item active">
-                    <img data-src="holder.js/1140x500/auto/#777:#555/text:First slide" alt="First slide">
+                    <div class="small">
+                        <img src="img/1.jpg" alt="First slide" >
+                    </div>
                   </div>
                   <div class="item">
-                    <img data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" alt="Second slide">
+                    <div class="small">
+                      <img src="img/2.jpg" alt="Second slide">
+                    </div>
                   </div>
                   <div class="item">
-                    <img data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" alt="Third slide">
+                    <div class="small">
+                      <img src="img/3.jpg" alt="Third slide">
+                    </div>
                   </div>
                 </div>
 
