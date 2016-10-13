@@ -1,0 +1,46 @@
+body 
+{
+
+}
+@color-white: #fff;
+@color-blue: #2F4F99;
+
+.borde-radius(@radius: 0.3em)
+{
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+#ui-datepicker-div
+{
+	.borde-radius(0);
+	div.ui-datepicker-header
+	{
+		.borde-radius(0);
+		background: @color-white;	
+	}
+
+	table.ui-datepicker-calendar
+	{
+		thead tr 
+		{
+			border-bottom: 1px solid #ededed;
+		}
+
+		tbody tr td a {
+			width: 30px;
+			text-align: center;
+			background: @color-white; 
+
+			.ui-state-default .ui-state-active
+			{
+				color: @color-blue;
+			}
+		}
+
+		tbody tr td a.ui-state-active {
+			color: @color-blue;
+			border:1px solid @color-blue;
+		}
+	}
+}
