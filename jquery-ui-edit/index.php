@@ -39,6 +39,12 @@
                 </button>
             </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-12">
+              <div class="week-picker"></div>
+          </div>
+        </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -83,6 +89,26 @@
         //});
 
         //$confModal.modal({ backdrop : false });
+
+        $(function () {
+            $('.week-picker').datepicker({
+                    showOtherMonths: true,
+                    selectOtherMonths: true,
+                    onSelect: function (dateText, inst) {
+                        
+                    },
+                    beforeShowDay: function (date) {
+                        var cssClass = '';
+                        return [true, cssClass];
+                    },
+                    onChangeMonthYear: function (year, month, inst) {
+                        
+                    },
+                    numberOfMonths: [4,3],
+                    showWeek: true,
+                    //showCurrentAtPos: new Date().getMonth()
+                });
+            });
 
       </script>
 
