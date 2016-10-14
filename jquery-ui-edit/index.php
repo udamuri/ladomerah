@@ -49,10 +49,24 @@
 
       <script>
         $( function() {
+          var array = ['2016-10-25','2016-10-28'];
+          var i = 0;
           $( "#datepicker, #datepicker_modal" ).datepicker({
               dateFormat: "d M, y",
               changeMonth: true,
-              changeYear: true
+              changeYear: true,
+              beforeShowDay: function(date) {
+                  console.log(array[i]);
+                  i++;
+                  if($.inArray($.datepicker.formatDate('yy-mm-dd', date ), array) > -1)
+                  {
+                    return [false,'booked-red', 'Booked out'];
+                  }
+                  else
+                  {
+                      return [true,'available', 'Available'];
+                  }
+              }
           });
         } );
 
