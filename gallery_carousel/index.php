@@ -79,10 +79,9 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-
-    <main class="main-content">
-          
-    </main>
+    <section class="main-content">
+           
+    </section>
 
     <footer class="main-footer">
         <div class="container">
