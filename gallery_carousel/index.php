@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="index-style.css" rel="stylesheet">
     <link href="nav.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -20,8 +20,10 @@
     <![endif]-->
   </head>
   <body>
-    <header class="container">
-        sdsd
+    <header class="main-header">
+        <div class="container">
+          
+        </div>
     </header>
     <nav class="navbar navbar-default">
       <div class="container">
@@ -77,9 +79,16 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container">
-        
-    </div>
+
+    <main class="main-content">
+          
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+          
+        </div>   
+    </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
