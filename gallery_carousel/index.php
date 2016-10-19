@@ -22,7 +22,11 @@
   <body>
     <header class="main-header">
         <div class="container">
-          
+          	<div class="row">
+          		<div class="col-md-6 hidden-xs">
+          			<img src="img/lado.png">
+          		</div>
+          	</div>
         </div>
     </header>
     <nav class="navbar navbar-default">
