@@ -87,7 +87,13 @@
     <div class="container main-content">
     	<main class="row">
 	    	<section class="col-md-9 col-sm-12 col-xs-12 pull-right">
-	    		panjang
+	    		<picture src="img/3.jpg" alt="angry pirate">
+				   <source src="img/1.jpg" media="min-width:800px">
+				   <source src="img/2.jpg" media="min-width:480px">
+				   <source src="img/3.jpg">
+				      <!-- fallback for browsers without support -->
+				      <img class="img-responsive" src="img/1.jpg" alt="angry pirate">
+				</picture>
 	    	</section>   
 
 	    	<aside class="col-md-3 col-sm-12 col-xs-12">
