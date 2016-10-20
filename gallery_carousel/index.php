@@ -87,13 +87,26 @@
     <div class="container main-content">
     	<main class="row">
 	    	<section class="col-md-9 col-sm-12 col-xs-12 pull-right">
-	    		<picture src="img/3.jpg" alt="angry pirate">
-				   <source src="img/1.jpg" media="min-width:800px">
-				   <source src="img/2.jpg" media="min-width:480px">
-				   <source src="img/3.jpg">
-				      <!-- fallback for browsers without support -->
-				      <img class="img-responsive" src="img/1.jpg" alt="angry pirate">
-				</picture>
+	    	      <main class="homeslide">
+                <section class="slider">
+                  <div id="slider" class="flexslider">
+                    <ul class="slides">
+                      <li class="lgimg">
+                        <div class="fleximg"><img class="lazy" src="" data-src="https://s-media-cache-ak0.pinimg.com/originals/2e/77/0c/2e770c3e3a235efdf05eca072a7f933c.jpg" alt="one" /></div>
+                      </li>
+                      <li class="lgimg">
+                        <div class="fleximg"><img class="lazy" src="" data-src="http://i.jootix.com/o/Jootix--a3e2565022.jpg" alt="jootix" /></div>
+                      </li>
+                      <li class="lgimg">
+                        <div class="fleximg"><img class="lazy" src="" data-src="https://farm5.staticflickr.com/4002/4450587914_dd0c1d25b6_b.jpg" alt="staticflickr"/></div>
+                      </li>
+                      <li class="lgimg">
+                        <div class="fleximg"><img class="lazy" src="" data-src="http://bsnscb.com/data/out/20/39345135-big-wallpapers.jpg" alt="bsnscb" /></div>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+            </main>
 	    	</section>   
 
 	    	<aside class="col-md-3 col-sm-12 col-xs-12">
@@ -123,8 +136,48 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
+
+    <link rel="stylesheet" href="flexslider/flexslider.css" type="text/css" media="screen" />
+    <script defer src="flexslider/jquery.flexslider.js"></script>
+
+
     <script type="text/javascript">
-       
+
+       $.fn.resizelimg = function(wrpliw){
+         var thiswidth = wrpliw.width();    
+         $(this).find('.fleximg').css({width: thiswidth+"px"});  
+      };
+
+      $(window).resize(function(){
+          $("#slider .lgimg").resizelimg($("#slider"));
+      });
+
+
+
+      $(window).load(function(){
+        $("#slider .lgimg").resizelimg($("#slider"));
+        $('#slider').flexslider({
+            animation: "slide",
+            animationLoop: true,
+            controlNav: false,
+            init: function (slider) {
+                // lazy load
+                $("img.lazy").slice(0,5).each(function () {
+                    var src = $(this).attr("data-src");
+                    //$(this).attr("src", src).removeAttr("data-src").removeClass("lazy");
+                    $(this).attr("src", src).removeAttr("data-src");
+                });
+            },
+            before: function (slider) {
+                // lazy load
+                $("img.lazy").slice(0,3).each(function () {
+                    var src = $(this).attr("data-src");
+                    $(this).attr("src", src).removeAttr("data-src");
+                });
+            }
+        });
+
+      });
     </script>
   </body>
 </html>
