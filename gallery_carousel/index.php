@@ -92,7 +92,7 @@
 
 	    	<aside class="col-md-3 col-sm-12 col-xs-12">
 	    		<article class="panel panel-default">
-				  <header class="panel-heading">Kategori</header>
+				  	<header class="panel-heading">Kategori</header>
 				    <section class="list-group">
 					  <a href="#" class="list-group-item active">Cras justo odio</a>
 					  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
@@ -112,7 +112,8 @@
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
