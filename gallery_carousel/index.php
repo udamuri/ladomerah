@@ -24,11 +24,12 @@
         <div class="container">
           	<div class="row">
           		<div class="col-md-6 hidden-xs">
-          			<img src="img/lado.png">
+          			<!-- <img src="img/lado.png"> -->
           		</div>
           	</div>
         </div>
     </header>
+    
     <nav class="navbar navbar-default">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -83,9 +84,26 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <section class="main-content">
-           
-    </section>
+    <div class="container main-content">
+    	<main class="row">
+	    	<section class="col-md-9 col-sm-12 col-xs-12 pull-right">
+	    		panjang
+	    	</section>   
+
+	    	<aside class="col-md-3 col-sm-12 col-xs-12">
+	    		<article class="panel panel-default">
+				  <header class="panel-heading">Kategori</header>
+				    <section class="list-group">
+					  <a href="#" class="list-group-item active">Cras justo odio</a>
+					  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+					  <a href="#" class="list-group-item">Morbi leo risus</a>
+					  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+					  <a href="#" class="list-group-item">Vestibulum at eros</a>
+					</section>
+				</article>
+	    	</aside>
+    	</main>
+    </div>
 
     <footer class="main-footer">
         <div class="container">
