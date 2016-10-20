@@ -28,6 +28,27 @@ body {}
 .image { .size(400px; 300px); }
 .avatar { .square(48px); }
 
+// retina Image
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}
+
+// Usage
+.jumbotron {
+  .img-retina("/img/bg-1x.png", "/img/bg-2x.png", 100px, 100px);
+}
+// retina Image
 .main-header
 {
 	background: @b-header;
