@@ -106,6 +106,14 @@
                                 </div>
                             </div>
                           </div>
+                          <div class="item">
+                            <div class="small">
+                              <img class="lazy" src="" data-src="img/4.jpg" alt="Third slide">
+                              <div class="carousel-caption">
+                                    <p>Third slide</p>
+                                </div>
+                            </div>
+                          </div>
                         </div>
 
                         <a class="left carousel-control" href="#carousel-lado<?php echo $i;?>" role="button" data-slide="prev">
