@@ -1,6 +1,7 @@
 <?php
 $json = json_decode('[{"id":1,"children":[{"id":2}]},{"id":3,"children":[{"id":4}]},{"id":5,"children":[{"id":17,"children":[{"id":18}]},{"id":6,"children":[{"id":7,"children":[{"id":8,"children":[{"id":10},{"id":9},{"id":11},{"id":12}]}]}]}]}]');
 
+/*
 $menu = '<ul>';
 foreach ($json as $value) {
 	$menu .= '<li>';
@@ -32,4 +33,44 @@ function createTree($datachild)
 }
 
 echo $menu ;
+*/
+
+
+$arrSort = [];
+foreach ($json as $value) {
+	getArr(['id' =>$value->id, 'children'=>0]);
+	if(isset($value->children))
+	{
+		$arrSort[] = createTree($value->children, $value->id);
+	}
+}
+
+
+
+function createTree($datachild, $id)
+{
+	$arrData = [] ;
+	foreach ($datachild as $value) {
+		getArr(['id' =>$value->id, 'children'=>$id]);
+		if(isset($value->children))
+		{
+			createTree($value->children, $value->id);
+		}
+	}
+
+	return $arrData;
+}
+
+function getArr($array = [])
+{
+	$arrData = [];
+
+	return $arrData;
+}
+
+foreach ($arrSort as $key => $value) {
+	echo $key;
+}
+
 ?>
+
